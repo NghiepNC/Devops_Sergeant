@@ -66,3 +66,64 @@ Github, Git server công ty.
 
 ## 4. Các mô hình workflow với git
 
+### 4.1 Centralized workflow
+![Git flow](Picture/git_flow1.png)
+*Centralized workflow*: Phù hợp cho những dự án
+nhỏ, codebase đơn giản.
+
+Kiểu 1 dev tự clone về xong rồi tự push.
+
+Chớ mô hình ngày thêm *Hái thứ hiêu* vô là xảy ra ra conflict liền. 
+
+khi nhiều người sửa chung 1 module or file sẽ conflict nên chỉ phù hợp với dự án nhỏ thôi
+
+### 4.2 Feature branch Workflow 
+
+![Git flow](Picture/git_flow2.png)
+
+Mỗi khi developer phát triển chức
+năng mới, họ sẽ tạo một nhánh riêng
+từ nhánh chính. Sau khi kết thúc công
+việc sẽ tạo pull-request để merge
+ngược trở lại.
+
+### 4.3 Gitflow workflow
+
+Phù hợp cho dự án lớn, codebase phức tạp,
+có thời gian phát triển dài.
+
+
+Mô hình này chia branch thành các branch
+có nhiệm vụ khác nhau như:
+
+- main
+- develop
+- feature-*
+- bugfix-*
+- release-*
+- hotfix-*
+
+![Git life cycle](Picture/git_flow3.png)
+
+- main: nhánh chính duy trì xuyên suốt vòng đời
+dự án. Chỉ được merge code vào khi có release
+lớn hoặc hot-fix. Được đánh tag theo release
+version.
+- develop: nhánh dùng để các developer phát triển
+feature/fix-bug. Code được checkout từ đây và
+merge trở lại khi hoàn thành task.
+- feature-*: naming rule tuỳ theo dự án. vd
+feature-<ticket-id>. Checkout từ nhánh develop.
+- bugfix-*: tương tự nhánh feature, dùng để fix
+bug.
+- release: được tạo ra trước mỗi đợt release
+version mới, code thường được deploy lên môi
+trường test/staging, có thể thực hiện chỉnh sửa
+nhỏ(optional).
+
+
+
+Dưới đây là 1 mô hình mình từng triển khai cung team cho dự án ở ngân hàng TCB 
+Bạn có thấy các code branch được tách và quản lý chặt chẽ để dự án được phát triển ổn định
+![Gitflow TCB](Picture/Git_flow_mytcb.png)
+
