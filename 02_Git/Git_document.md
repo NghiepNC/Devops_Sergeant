@@ -127,3 +127,22 @@ Dưới đây là 1 mô hình mình từng triển khai cung team cho dự án �
 Bạn có thấy các code branch được tách và quản lý chặt chẽ để dự án được phát triển ổn định
 ![Gitflow TCB](Picture/Git_flow_mytcb.png)
 
+## 5 Git và các môi trường trong dự án
+
+Trong quy trình vòng đời phát triển phần mềm thường được chia ra nhiều môi trường để phát triển kiểm thử cà golive tới enduser
+-  ít nhất với 3 môi trường DEV, Test, PROD
+- Thông dụng nhất là 4 môi trường: Dev, Test, Staging , Prod
+- Nhiêu hơn với các môi trường: Dev, SIT, UAT, STG , PT , DR, PROD (😉 mình từng tham gia product của TCB vs 7 môi trường như thế ^^ )
+
+
+
+![Git_env](Picture/git_env.png)
+
+
+Dưới đây mình sẽ trình bay mô hình thông dụng nhất với 4 môi trường: 
+- Môi trường Dev: Thường được deploy auto ngay khi có pull requesst được merge vào nhánh develop (CICD)
+- Môi trường Test: sử dụng cho Integration Testing, thường được release theo phuên bản từ nhánh release
+- Môi trường Staging: Sử dụng cho System Testing & hoạt động UAT trước khi release cho end-user. Về co bản môi trường Staging phải giống môi trường Production . Vì nếu có lỗi gì trên Prod thì mình cũng sẽ tái hiện được ở môi trường STG này và fix bug nó =)) .
+Khi apply Hotfix, nên test trước nới mt Staging trước khi apply merge vào main và deploy lên Production .
+
+
