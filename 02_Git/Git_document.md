@@ -146,3 +146,9 @@ Dưới đây mình sẽ trình bay mô hình thông dụng nhất với 4 môi 
 Khi apply Hotfix, nên test trước nới mt Staging trước khi apply merge vào main và deploy lên Production .
 
 
+### 6. Một số nhà cung cấp GIT 
+- Github
+- Bitbucket
+- AWS CodeCommit
+- Gitlab
+-Azure DevOps
