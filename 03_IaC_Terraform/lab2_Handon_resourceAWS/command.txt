@@ -1,0 +1,36 @@
+#Generate keypair using ssh
+ssh-keygen -t rsa -b 4096 -C "hoanglinhdigital@gmail.com"
+#Enter path for new key: example ./keypair/udemy-key
+
+
+Handon#1
+mkdir -p ./keypair/udemy-key 
+ssh-keygen -t rsa -b 4096 -C "nghiepnc2@gmail.com" -f "./keypair/udemy-key/id_rsa"  
+
+Handon #2
+mkdir -p ./keypair
+ssh-keygen -t rsa -b 4096 -C "hoanglinhdigital@gmail.com"
+#Enter path for new key: example ./keypair/udemy-key
+
+
+
+
+
+#Terraform EC2 Instance definition syntax:
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
+#Command Terraform:
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+
+# Check user chạy terraform  (cần có quyền addmin)
+aws configure  
+aws sts get-caller-identity      
+
+aws configure  --profile develop01
+aws sts get-caller-identity --profile develop01   
+
+
+
